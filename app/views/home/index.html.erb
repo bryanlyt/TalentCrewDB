@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><%= full_title(yield(:title)) %></title>
+  <title>TalentcrewDB</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/header' %>
 
   <% flash.each do |k, v| %>
     <p><%= "#{k}: #{v}" %></p>
   <% end %>
 
-  <div class="container">
+  <%= render 'layouts/header' %>
+
   <%= yield %>
-	</div>
+
+  <% if user_logged_in? %>
+    <%= link_to "Logout", logout_path, method: :delete %>
+  <% end %>
 
 </body>
 </html>
