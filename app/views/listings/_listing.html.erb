@@ -1,9 +1,0 @@
-<li id="listings-<%= listing.id %>">
-  <span class="content"><%= listing.title %></span>
-  <span class="edit content">
-  <% if current_user?(listing.user) %>
-    <%= link_to "edit", edit_user_listing_path(listing.user,listing) %> 
-    <%= link_to "delete", [listing.user,listing], method: :delete, data: {confirm: "Confirm deletion?"} %>
-  <% end %>
-  </span>
-</li>

@@ -1,0 +1,10 @@
+<li id="projects-<%= project.id %>">
+  <span class="content"><%= project.title %></span>
+  <span class="edit content">
+  <% if current_user?(project.user) %>
+    <%= link_to "edit", edit_user_project_path(project.user,project) %> 
+    <%= link_to "delete", [project.user,project], method: :delete, data: {confirm: "Confirm deletion?"} %>
+  <% end %>
+  </span>
+</li>
+

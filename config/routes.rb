@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users
-  resources :listings
+  resources :projects
 
   get '/register', to: "registrations#new", as: 'new_register'
   post '/register', to: "registrations#create", as: 'register'
