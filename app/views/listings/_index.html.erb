@@ -1,0 +1,4 @@
+<% @listings.each do |listing| %>
+  <h1><%= listing.title %></h1>
+  <%= link_to "Discover Job Listing", listing_path %>
+<% end %>

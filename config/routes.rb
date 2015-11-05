@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users
+  resources :listings
 
   get '/register', to: "registrations#new", as: 'new_register'
   post '/register', to: "registrations#create", as: 'register'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: 'new_login'
   post '/login', to: "sessions#create", as: 'login'
   delete '/logout', to: "sessions#destroy", as: 'logout'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

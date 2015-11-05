@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 	validates :username, presence: true
 	validates :email, presence: true, uniqueness: true, 
 		format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\W]+\z/ }
+  has_many :listings  
+
 	before_save { self.email = email.downcase }
 	has_secure_password
 
