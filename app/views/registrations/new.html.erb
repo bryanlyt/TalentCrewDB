@@ -1,6 +1,8 @@
 <% provide(:title, 'Register') %>
-<h1>Account Registration</h1>
 
+<br><br>
+<h2><center>Account Registration</center></h2>
+<br>
 <% if @user && @user.errors.present? %>
   <ul>
     <% @user.errors.full_messages.each do |e| %>
@@ -10,22 +12,22 @@
 <% end %>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-4 col-md-offset-4">
     <%= form_for @user, url: register_path do |f| %>
 
         <%= f.label :username %>
         <%= f.text_field :username, class: 'form-control' %>
-
+      <br>
         <%= f.label :email %>
         <%= f.text_field :email, class: 'form-control' %>
-
+      <br>
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
-
-        <%= f.label :password_confirmation, "Confirmation" %>
+      <br>
+        <%= f.label :password_confirmation, "Retype your password" %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-        <%= f.submit "Register", class: "btn btn-warning" %>
+      <br>
+        <%= f.submit "Register", class: "btn btn-primary btn-block" %>
     <% end %>
   </div>
 </div>
